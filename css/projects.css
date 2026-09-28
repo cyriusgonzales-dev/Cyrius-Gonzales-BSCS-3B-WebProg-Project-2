@@ -1,0 +1,77 @@
+.project-list-section{padding-bottom:10px}.project-list-section .filter-bar{margin-bottom:17px}.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.project-card{position:relative;display:flex;flex-direction:column;min-height:225px;padding:20px;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);text-align:left;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s}.project-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--color-accent) 55%,var(--color-border));box-shadow:var(--color-shadow)}.project-card .card-kicker{color:var(--color-accent)}.project-card h2{margin:35px 0 8px;color:var(--color-primary);font-size:21px;line-height:1.2}.project-card p{margin:0 0 18px;color:var(--color-muted);font-size:12px}.project-card .project-open{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--color-border);color:var(--color-primary);font-size:9px;font-weight:700;letter-spacing:.6px}.project-card .project-open span{color:var(--color-accent);font-size:17px}.project-empty{grid-column:1/-1;min-height:174px;display:grid;align-content:center;justify-items:start;padding:25px;border:1px dashed var(--color-border);border-radius:8px}.project-empty h2{margin:0;color:var(--color-primary);font-size:18px}.project-empty p{max-width:440px;margin:8px 0 0;color:var(--color-muted);font-size:12px}.compact-banner{margin-top:44px}
+@media(max-width:1000px) and (min-width:761px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-card{min-height:210px;padding:16px}.project-card h2{font-size:18px}}
+@media(max-width:500px){.project-grid{grid-template-columns:1fr}.project-card{min-height:185px}.project-card h2{margin-top:24px}}
+/* Projects becomes the single scrollable library; all category items remain visible together. */
+html.project-browser,body.project-browser{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
+body.project-browser .app-shell{height:auto;min-height:100dvh;overflow:visible}
+body.project-browser .main-content{height:auto;min-height:100dvh;overflow:visible;padding-bottom:22px}
+body.project-browser .page-wrap{height:auto;min-height:100dvh;overflow:visible}
+body.project-browser .page-intro{padding:27px 0 18px}
+body.project-browser .page-intro>p:last-child{display:block;margin-top:9px}
+body.project-browser .project-list-section{display:block;flex:initial;min-height:0;padding-bottom:18px}
+body.project-browser .project-list-section .filter-bar{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 13px}
+body.project-browser .project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto;grid-auto-rows:auto;gap:12px;min-height:0}
+body.project-browser .project-card{display:flex;min-height:0;padding:12px;overflow:hidden}
+body.project-browser .project-card h2{margin:9px 0 4px;font-size:16px;line-height:1.2}
+body.project-browser .project-card p{display:block;margin:0 0 8px;font-size:10px;line-height:1.35}
+body.project-browser .project-card .card-kicker{font-size:8px}
+body.project-browser .project-card .project-open{padding-top:7px;font-size:8px}
+.website-thumbnail,.image-thumbnail{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--color-border);border-radius:5px;background:var(--color-surface-soft)}
+.website-thumbnail iframe{position:absolute;top:0;left:0;width:1280px;height:720px;border:0;transform-origin:top left;pointer-events:none;background:#fff}
+.website-thumbnail img{display:block;width:100%;height:100%;object-fit:cover}
+.image-thumbnail img{display:block;width:100%;height:100%;object-fit:cover}
+.image-thumbnail img.contain-image{object-fit:contain;padding:8px}
+.project-card-action{display:flex;flex:1 1 auto;flex-direction:column;align-items:stretch;min-width:0;padding:0;border:0;background:transparent;color:var(--color-text);font:inherit;text-align:left;cursor:pointer}
+.project-card-action .project-open{margin-top:auto}
+.website-preview-trigger{position:absolute;inset:0;width:100%;border:0;background:transparent;cursor:zoom-in}
+.website-preview-trigger:focus-visible{outline:3px solid var(--color-accent);outline-offset:-4px}
+.image-thumbnail{padding:0;border:1px solid var(--color-border);cursor:zoom-in}
+.image-thumbnail:hover img{transform:scale(1.025)}
+.thumbnail-placeholder{display:grid;place-items:center;width:100%;height:100%;padding:10px;color:var(--color-muted);font-size:10px;text-align:center}
+.project-card--graphic-design .image-thumbnail img.contain-image{object-fit:contain}
+.project-pagination{display:none!important}
+.project-live-preview{display:block;width:100%;height:min(66dvh,620px);margin:16px 0 12px;border:1px solid var(--color-border);border-radius:6px;background:#fff}
+.preview-notice{margin:16px 0 12px;padding:17px;border-left:3px solid var(--color-accent);background:var(--color-surface-soft);color:var(--color-text);font-size:13px}
+.preview-notice[hidden]{display:none}
+.project-image-viewer{position:relative;display:grid;grid-template-columns:42px minmax(0,1fr) 42px;grid-template-rows:minmax(180px,66dvh) auto;align-items:center;justify-items:center;gap:8px;margin:16px 0 8px}
+.project-image-viewer[hidden],.project-live-preview[hidden]{display:none}
+.project-image-viewer img{grid-column:2;grid-row:1;width:100%;height:100%;object-fit:contain;background:#101820;border-radius:5px}
+.project-image-viewer img.image-missing{display:none}
+.project-image-viewer figcaption{grid-column:1/-1;color:var(--color-muted);font-size:11px;text-align:center}
+.image-step{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--color-border);border-radius:50%;background:var(--color-surface);color:var(--color-primary);font-size:24px;cursor:pointer}
+.image-step[hidden]{display:none}
+.image-step:first-child{grid-column:1;grid-row:1}
+.image-step:nth-of-type(2){grid-column:3;grid-row:1}
+@media(max-width:1000px){body.project-browser .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){body.project-browser .main-content{height:auto;min-height:calc(100dvh - 108px);padding:0 16px 18px;overflow:visible}body.project-browser .page-wrap{min-height:calc(100dvh - 108px);padding-top:12px}body.project-browser .page-intro{padding:15px 0 12px}body.project-browser .page-intro h1{font-size:38px}body.project-browser .page-intro>p:last-child{font-size:11px}body.project-browser .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}body.project-browser .project-card{padding:9px}body.project-browser .project-card h2{font-size:14px}body.project-browser .project-card p{font-size:9px}.project-live-preview{height:62dvh}.project-image-viewer{grid-template-columns:30px minmax(0,1fr) 30px;grid-template-rows:minmax(160px,58dvh) auto;gap:5px}.image-step{width:28px;height:28px;font-size:20px}}
+@media(max-width:420px){body.project-browser .project-grid{grid-template-columns:1fr}body.project-browser .project-card{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto;column-gap:10px;align-items:stretch}body.project-browser .website-thumbnail,body.project-browser .image-thumbnail{grid-column:1;grid-row:1;align-self:center}body.project-browser .project-card-action{grid-column:2;grid-row:1}body.project-browser .project-card h2{margin-top:4px}.project-live-preview{height:58dvh}}
+body.project-browser.modal-open,html.project-browser.modal-open{overflow:hidden}
+body.project-browser .project-dialog{width:min(1120px,calc(100% - 36px));max-height:92dvh;overflow:auto}
+body.project-browser .project-dialog .dialog-panel{padding:26px}
+body.project-browser .project-dialog .dialog-category{margin-top:8px}
+@media(max-width:600px){body.project-browser .project-dialog{width:calc(100% - 20px)}body.project-browser .project-dialog .dialog-panel{padding:38px 14px 16px}.project-live-preview{height:56dvh}}
+.projects-page .page-intro>p:last-child{margin-top:6px}
+@media(max-width:760px){.projects-page .page-intro>p:last-child{display:none}.projects-page .page-intro{padding-top:9px;padding-bottom:8px}.project-list-section{min-height:0}.project-grid{min-height:0}.project-card{min-height:0}.project-card h2{margin-top:5px}}
+@keyframes project-card-arrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+body.project-browser .project-card{animation:project-card-arrive .42s cubic-bezier(.2,.7,.2,1) both}
+body.project-browser .project-card:nth-child(2){animation-delay:.04s}body.project-browser .project-card:nth-child(3){animation-delay:.08s}body.project-browser .project-card:nth-child(4){animation-delay:.12s}body.project-browser .project-card:nth-child(5){animation-delay:.16s}body.project-browser .project-card:nth-child(6){animation-delay:.2s}body.project-browser .project-card:nth-child(7){animation-delay:.24s}body.project-browser .project-card:nth-child(8){animation-delay:.28s}body.project-browser .project-card:nth-child(9){animation-delay:.32s}
+
+body.project-browser .page-intro{padding:32px 0 20px}
+body.project-browser .page-intro h1{font-size:clamp(46px,4.5vw,58px);line-height:.98}
+body.project-browser .page-intro>p:last-child{display:block;margin-top:12px;color:#626d78;font-size:14px;line-height:1.5}
+body.project-browser .project-list-section{padding-bottom:8px}
+body.project-browser .project-grid{gap:14px}
+body.project-browser .project-card{padding:15px}
+body.project-browser .project-card h2{font-size:18px}
+body.project-browser .project-card p{font-size:12px;line-height:1.45}
+body.project-browser .project-dialog{overflow-x:hidden;overflow-y:auto}
+@media(max-width:760px){
+	body.project-browser .page-intro{padding:24px 0 17px}
+	body.project-browser .page-intro h1{font-size:clamp(38px,8vw,48px)}
+	body.project-browser .page-intro>p:last-child{display:block;font-size:12px}
+	body.project-browser .project-grid{gap:10px}
+	body.project-browser .project-card{padding:11px}
+	body.project-browser .project-card h2{font-size:15px}
+	body.project-browser .project-card p{font-size:11px}
+}
